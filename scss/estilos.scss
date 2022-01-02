@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{     
+    nav{                                          
+        .logo{                                /*menu*/
+            width: 65px;
+            height: 29px;
+            left: 181px;
+            top: 22px;
+        }
+        .name{
+            display: none;
+        }
+    }
+}
+main{
+    .envios{
+        display: flex;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    .banner2{
+        margin: 25px 10px 25px 10px;
+    }
+    .productos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2{
+            margin: 0 auto 15px;
+
+        }
+        .productos__card{
+            width: 250px;
+            margin: 0 auto 15px;
+            .productos__card--img{
+                width: 250px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+    .categorias{
+        display: flex;
+        flex-direction: row;
+        .categorias__productos1, .categorias__productos2{
+            margin: 15px auto 15px;
+            margin-right: 10px;
+            .categorias__img{
+                position:relative;
+            }
+        }
+    }
+    .form{
+        margin: 0 auto 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.493);
+        border-radius: 5px;
+        .input{
+            display: flex;
+        }
+        .boton{
+            border-radius: 5px;
+            background-color: rgba(206, 176, 93, 0.945);
+            margin: 5px;
+        }
+        .clientes{
+            width: 70%;
+            .boton__clientes{
+                margin: 35px;
+            }
+            .div__clientes{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+}
+
+footer{
+    .footer__info{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.493);
+        h4{
+            font-size: 15px;
+        }
+    }
+}
