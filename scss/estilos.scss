@@ -4,16 +4,50 @@
     box-sizing: border-box;
 }
 header{     
-    nav{                                          
-        .logo{                                /*menu*/
-            width: 65px;
-            height: 29px;
-            left: 181px;
-            top: 22px;
+    nav{
+        margin: 0 auto;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: white;
+        margin-bottom: 7px;
+        .nav__list{
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            .nav__logo{
+                margin-top: 8px;
+                font-size: 2rem;
+                text-decoration-line: none;
+                color:white
+            }
+            ul{
+                display: flex;
+                    flex-direction: row;
+                li{
+                    display: flex;
+                    flex-direction: row;
+                    margin: 5px;
+                    list-style: none;
+                    font-size: 1rem;
+                }
+            }
         }
-        .name{
-            display: none;
+        .btncarrito{
+            height: 6vh;
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            padding: 2px;
+            background-color: white;
+            border-radius: 5px;
         }
+        
     }
 }
 main{
@@ -81,8 +115,31 @@ main{
             }
         }
     }
-
+    .container__products{
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        .productos{
+            border-radius: 5px;
+            height: 50vh;
+            box-shadow: 5px 5px 20px 5px rgb(105, 103, 103);
+            margin: 20px;
+            .productos__card{
+                .productos__card--img{
+                    border-radius: 5px;
+                    width: 250px;
+                    height: 37vh;
+                }
+            }
+        }
+        .productos:hover{
+            box-shadow: 5px 5px 20px 5px rgb(185, 181, 181);
+        }
+    }
 }
+
+
 
 footer{
     .footer__info{
