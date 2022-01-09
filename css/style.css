@@ -12,7 +12,9 @@ header nav {
   align-items: center;
   background-color: black;
   color: white;
-  margin-bottom: 7px; }
+  position: fixed;
+  width: 100%;
+  z-index: 10000; }
   header nav .nav__list {
     margin: 0 auto;
     display: flex;
@@ -41,6 +43,14 @@ header nav {
     padding: 2px;
     background-color: white;
     border-radius: 5px; }
+
+main section h1 {
+  display: flex;
+  justify-content: center;
+  margin: 30px; }
+
+main section .carousel {
+  margin-top: 60px; }
 
 main .envios {
   display: flex;
@@ -102,13 +112,36 @@ main .container__products {
   justify-content: space-between; }
   main .container__products .productos {
     border-radius: 5px;
-    height: 50vh;
+    height: 60vh;
     box-shadow: 5px 5px 20px 5px #696767;
     margin: 20px; }
     main .container__products .productos .productos__card .productos__card--img {
       border-radius: 5px;
       width: 250px;
       height: 37vh; }
+    main .container__products .productos .productos__card .productos__card--img:hover {
+      transform: scale(1.1, 1.1);
+      transition: 2s ease; }
+    main .container__products .productos .productos__card .productos__card--title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2rem;
+      color: darkgoldenrod;
+      margin-left: 10px; }
+    main .container__products .productos .productos__card .productos__card--info {
+      padding: 10px; }
+    main .container__products .productos .productos__card .productos__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px;
+      border-top: 5px black;
+      border-style: initial; }
+      main .container__products .productos .productos__card .productos__content .btnAgregar {
+        padding: 8px;
+        border-radius: 50%;
+        margin-right: 15px;
+        color: white;
+        background-color: black; }
   main .container__products .productos:hover {
     box-shadow: 5px 5px 20px 5px #b9b5b5; }
 

@@ -18,11 +18,14 @@ function mostrarProductos(array){
                 <div>
                     <img class="productos__card--img" src= ${productos.img}>
                     <span class="productos__card--title">${productos.nombre}</span>
-                    <p>${productos.descrip}</p>
+                    <div class="productos__card--info">
+                        <p>${productos.descrip}</p>
+                        <p>Talle: ${productos.talle}</p>
+                    </div>
                 </div>
                 <div class="productos__content">
                     <p class="precioproducto" >Precio: $${productos.precio}</p>
-                    <a id="boton${productos.id}" class="btn-floating halfway-fab waves-light black"><i class="fas fa-cart-plus"></i></a>
+                    <button id="boton${productos.id}" class="btnAgregar"><i class="fas fa-cart-plus"></i></button>
                 </div>
             </div>
         `
@@ -42,8 +45,8 @@ function agregarAlCarrito(id){
     let verificar = carritoDeCompras.find(elemento => elemento.id == id)
     if(verificar){
         verificar.cantidad = verificar.cantidad + 1
-        document.getElementById(`cantidad${verificar.id}`).innerHTML =`<p id="cantidad${verificar.id}">Cantidad:${verificar.id}</p>`
-        actualizarCarrito()
+        document.getElementById(`cantidad${verificar.id}`).innerHTML = `<p id="cantidad${verificar.id}">Cantidad:${verificar.cantidad}</p>`
+        ActualizarCarrito()
     }else{
         let productoAgregar = stockProductos.find(productos => productos.id == id) //agrega el elemento del array que coincida con el ID
 
@@ -75,7 +78,10 @@ function agregarAlCarrito(id){
     }
 }
 
-
+function actualizarCarrito(){
+    contadorCarrito.innerText = carritoDeCompras.reduce((acumulador, elemento) => acumulador + elemento.cantidad, 0)
+    precioTotal.innerText = carritoDeCompras.reduce((acumulador, elemento) => acumulador + (elemento.precio * elemento.cantidad), 0)
+}
 //----------------------------------------FORMULARIO----------------------------------------------------------------------------
 class Cliente{
     constructor(nombre, apellido, email){
