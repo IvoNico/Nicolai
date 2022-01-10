@@ -12,9 +12,7 @@ header nav {
   align-items: center;
   background-color: black;
   color: white;
-  position: fixed;
-  width: 100%;
-  z-index: 10000; }
+  width: 100%; }
   header nav .nav__list {
     margin: 0 auto;
     display: flex;
@@ -144,6 +142,23 @@ main .container__products {
         background-color: black; }
   main .container__products .productos:hover {
     box-shadow: 5px 5px 20px 5px #b9b5b5; }
+
+main section .modal-container {
+  position: fixed;
+  z-index: 15000;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  main section .modal-container .modall {
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    overflow: hidden; }
 
 footer .footer__info {
   color: white;
