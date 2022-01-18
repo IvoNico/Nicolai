@@ -1,4 +1,4 @@
-let stockProductos = [
+/*let stockProductos = [
     {id: 1, class:'img',  nombre: "Remera Sidney bordó", tipo: "Remera oversize", descrip: "Be authentic, wear NICOLAI", precio: 3100, talle: "L", img: './img/products/remera-bordo.jpg', cantidad:4},
     {id: 2, nombre: "Remera Sidney celeste", tipo: "Remera oversize", descrip: "Be authentic, wear NICOLAI", precio: 3100, talle: "L", img:'./img/products/remera-celeste.jpg', cantidad:1},
     {id: 3, nombre: "Remera Sidney negra", tipo: "Remera oversize", descrip: "Be authentic, wear NICOLAI", precio: 3100, talle: "m", img: './img/products/remera-negra.jpg', cantidad:1},
@@ -9,4 +9,4 @@ let stockProductos = [
     {id: 8, nombre: "Buzo detroit celeste", tipo: "Buzo holgado", descrip:"Be authentic, wear NICOLAI", precio: 4100, talle: "XXL", img:'./img/products/buzo-celeste.jpg', cantidad: 1 },
     {id: 9, nombre: "Buzo Oslo francia", tipo: "Buzo canguro", descrip:"Be authentic, wear NICOLAI", precio: 4100, talle: "L", img:'./img/products/buzo-francia.jpg', cantidad:1 },
     {id: 10, nombre: "Buzo Oslo bordó", tipo: "Buzo canguro", descrip:"Be authentic, wear NICOLAI", precio: 4100, talle: "L", img:'./img/products/buzo-bordo.jpg', cantidad:1 },
-]
+]*/

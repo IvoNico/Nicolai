@@ -1,4 +1,4 @@
 /node_modules/
-*.json
-*json
+*package.json
+*package-lock.json
 *java.text
