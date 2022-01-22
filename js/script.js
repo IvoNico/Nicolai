@@ -1,4 +1,4 @@
-//--------------------------------------CARRITO DE COMPRAS--------------------------------------------------------------------
+//CARRITO DE COMPRAS
 let carritoDeCompras = []
 let stockProductos = [] //al usar el stock del archivo json tenemos que crear el array vacio para llamar a los productos
 
@@ -10,12 +10,15 @@ const contadorCarrito = document.getElementById('contadorCarrito')
 
 const botonTerminar = document.getElementById('terminar') 
 
-// FUNCION PARA MOSTRAR LOS PRODUCTOS---------------------------------------------------------------------
+// FUNCION PARA MOSTRAR LOS PRODUCTOS
 
 $.getJSON('stock.json', function (data){ //SE UTILIZA PARA LLAMAR AL ARCHIVO JSON 
-    data.forEach(elemento => stockProductos.push(elemento))
+    data.forEach(elemento =>{
+        stockProductos.push(elemento)
+    })
 
     mostrarProductos(stockProductos)
+    recuperar()
 })
 
 function mostrarProductos(array){
@@ -43,26 +46,19 @@ function mostrarProductos(array){
         let botonAgregar = document.getElementById(`boton${productos.id}`) //INDICAR QUE AL HACER CLICK EN EL BOTON SE AGREGE AL CARRITO
         botonAgregar.addEventListener('click',() =>{
             agregarAlCarrito(productos.id)
-            Toastify({
-                text: "¡Producto agregado!",
-                duration: 3000
-                }).showToast();
+            
         })
     })
 }
 
-//--------------------------------------Funcion para el carrito-------------------------------------------------------------
+//Funcion para el carrito
 
 function agregarAlCarrito(id){
     let verificar = carritoDeCompras.find(elemento => elemento.id == id)
     if(verificar){
         verificar.cantidad = verificar.cantidad + 1
         document.getElementById(`cantidad${verificar.id}`).innerHTML = `<p id="cantidad${verificar.id}">Cantidad:${verificar.cantidad}</p>`
-        Toastify({
-            text: "¡Producto agregado!",
-            duration: 3000
-            }).showToast();
-
+        localStorage.setItem('carrito',JSON.stringify(carritoDeCompras))
         actualizarCarrito()
     }else{
         let productoAgregar = stockProductos.find(productos => productos.id == id) //agrega el elemento del array que coincida con el ID
@@ -73,8 +69,13 @@ function agregarAlCarrito(id){
             duration: 3000
             }).showToast();
         actualizarCarrito()//siempre hay que actualizar el carrito
+        mostrarCarrito(productoAgregar)
+    }
+    localStorage.setItem('carrito',JSON.stringify(carritoDeCompras))
+}     
 
-        let divModal = document.createElement('div')
+function mostrarCarrito(productoAgregar){
+    let divModal = document.createElement('div')
         divModal.classList.add('productoEnCarrito')
         divModal.innerHTML += `
             <p>${productoAgregar.nombre}</p>
@@ -89,16 +90,28 @@ function agregarAlCarrito(id){
             if(productoAgregar.cantidad == 1){
                 botonEliminar.parentElement.remove()//elimina el elemento del HTML
                 carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != productoAgregar.id) //trae un array nuevo con los ID diferentes al del boton eliminar que se hizo click
+                localStorage.setItem('carrito',JSON.stringify(carritoDeCompras))
                 actualizarCarrito()
             }else{
                 productoAgregar.cantidad = productoAgregar.cantidad - 1
                 document.getElementById(`cantidad${productoAgregar.id}`).innerHTML = `<p id="cantidad${productoAgregar.id}">Cantidad:${productoAgregar.cantidad}</p>`
+                localStorage.setItem('carrito',JSON.stringify(carritoDeCompras))
                 actualizarCarrito()
             }
         })
+}
+//FUNCION RECUPERAR CARRITO
+function recuperar() {
+    let recuperar = JSON.parse(localStorage.getItem('carrito'))
+    if(recuperar){
+        recuperar.forEach(el => {
+            carritoDeCompras.push(el)
+            mostrarCarrito(el)
+            actualizarCarrito()
+        });
     }
 }
-
+//FUNCION ACTUALIZAR CARRITO
 function actualizarCarrito(){
     contadorCarrito.innerText = carritoDeCompras.reduce((acumulador, elemento) => acumulador + elemento.cantidad, 0)
     precioTotal.innerText = carritoDeCompras.reduce((acumulador, elemento) => acumulador + (elemento.precio * elemento.cantidad), 0)
@@ -116,12 +129,12 @@ botonTerminar.innerHTML= '<a id="finalizar" class="waves-effect waves-light btn 
             $('#carrito-contenedor').append('<h5>Su pedido fue procesado exitosamente</h5>')
             carritoDeCompras = []
             localStorage.clear()//vaciar el localStorage
-            ActualizarCarrito()
+            actualizarCarrito()
         }
     })
 })
 
-//----------------------------------------FORMULARIO----------------------------------------------------------------------------
+//FORMULARIO
 class Cliente{
     constructor(nombre, apellido, email){
         this.nombre = nombre
