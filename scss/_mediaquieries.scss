@@ -1,7 +1,37 @@
 @media only screen and (max-width: 415px){
     body{
         header{
-            
+            .nav__container{
+                max-width: 415px;
+                height: 6vh;
+                padding: 0px 20px 0px 20px;
+                .btnLight, .btnDark{
+                    height: 3vh;
+                    margin: 10px 0px;
+                }
+                .nav__menu{
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                }
+                .nav__logo{
+                    display: none;
+                }
+                .btncarrito{
+                    height: 3vh;
+                }
+            }
+        }
+        main{
+            .information{
+                display: flex;
+                flex-direction: column;
+                .information__container{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
         }
     }
+    
 }

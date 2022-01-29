@@ -278,3 +278,26 @@ body {
 .darkMode {
   background-color: black;
   color: azure; }
+
+@media only screen and (max-width: 415px) {
+  body header .nav__container {
+    max-width: 415px;
+    height: 6vh;
+    padding: 0px 20px 0px 20px; }
+    body header .nav__container .btnLight, body header .nav__container .btnDark {
+      height: 3vh;
+      margin: 10px 0px; }
+    body header .nav__container .nav__menu {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; }
+    body header .nav__container .nav__logo {
+      display: none; }
+    body header .nav__container .btncarrito {
+      height: 3vh; }
+  body main .information, body main .information .information__container {
+    display: flex;
+    flex-direction: column; }
+    body main .information .information__container {
+      display: flex;
+      flex-direction: column; } }
