@@ -300,4 +300,17 @@ body {
     flex-direction: column; }
     body main .information .information__container {
       display: flex;
-      flex-direction: column; } }
+      flex-direction: column; }
+  body main .modal-active .modal-carrito {
+    max-width: 360px;
+    min-width: 300px; }
+  body footer {
+    width: 414px; }
+    body footer .footer__info .paginas {
+      margin-left: 20px; }
+      body footer .footer__info .paginas a {
+        font-size: 0.6rem; }
+    body footer .footer__info div h4 {
+      font-size: 0.8rem; }
+    body footer .footer__info div span {
+      font-size: 0.6rem; } }

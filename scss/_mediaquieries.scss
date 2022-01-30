@@ -31,6 +31,29 @@
                     flex-direction: column;
                 }
             }
+            .modal-active{
+                .modal-carrito{
+                    max-width: 360px;
+                    min-width: 300px;
+                }
+            }
+        }
+        footer{
+            width: 414px;
+            .footer__info{
+                .paginas{
+                    margin-left: 20px;
+                    a{
+                        font-size: 0.6rem;
+                    }
+                }
+                div h4{
+                    font-size: 0.8rem;
+                }
+                div span{
+                    font-size: 0.6rem;
+                }
+            }
         }
     }
     
