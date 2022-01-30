@@ -27,7 +27,7 @@ function mostrarProductos(array){
         divProductos.classList.add('productos')
         divProductos.innerHTML += `
             <div class=" productos__card ">
-                <div wow animate__animated animate__bounceInDown>
+                <div >
                     <img class="productos__card--img" src= ${productos.img}>
                     <span class="productos__card--title">${productos.nombre}</span>
                     <div class="productos__card--info">
